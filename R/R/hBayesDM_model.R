@@ -141,13 +141,7 @@ hBayesDM_model <- function(task_name,
       stop("** Posterior predictions are not yet available for this model. **\n")
     }
 
-    if (is.null(data) || any(is.na(data)) || identical(data, "")) {
-      print("Invalid input for the 'data' value. ",
-           "You should pass a data.frame, or a filepath for a data file,",
-           "\"example\" for an example dataset, ",
-           "or \"choose\" to choose it in a prompt.")
-
-    } else if ("data.frame" %in% class(data)) {
+    if ("data.frame" %in% class(data)) {
       # Use the given data object
       raw_data <- data.table::as.data.table(data)
 
