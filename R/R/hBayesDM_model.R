@@ -142,7 +142,7 @@ hBayesDM_model <- function(task_name,
     }
 
     if (is.null(data) || any(is.na(data)) || identical(data, "")) {
-      stop("Invalid input for the 'data' value. ",
+      print("Invalid input for the 'data' value. ",
            "You should pass a data.frame, or a filepath for a data file,",
            "\"example\" for an example dataset, ",
            "or \"choose\" to choose it in a prompt.")
